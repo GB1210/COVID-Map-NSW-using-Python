@@ -1,12 +1,4 @@
-### THIS CODE BELOW IS TO PRACTICE WEB SCRAPING AND SHOULD BE DELETED FROM THE ACTUAL PROGRAM ARRRGGGGHHH
 import pandas as pd
-import geopandas as gpd
-import geopy
-from geopy.geocoders import Nominatim
-from geopy.extra.rate_limiter import RateLimiter
-import matplotlib.pyplot as plt
-import folium
-from folium.plugins import FastMarkerCluster
 import requests
 from bs4 import BeautifulSoup
 
@@ -19,7 +11,6 @@ df['ADDRESS'] = df['Venue'].astype(str) + ',' + \
                 df['Suburb'] + ',' + ' Australia'   
 
 for address in df['ADDRESS']:
-    # do something
     pass
     url = "https://www.whereis.com/search-results?query=" + str(address)
     r = requests.get(url)
