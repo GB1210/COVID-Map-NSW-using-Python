@@ -2,8 +2,6 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-soup = BeautifulSoup(r.content, 'html.parser')
-
 df = pd.read_csv("COVID Data.csv")
 df.head()
 
@@ -14,5 +12,7 @@ for address in df['ADDRESS']:
     pass
     url = "https://www.whereis.com/search-results?query=" + str(address)
     r = requests.get(url)
-    result = soup.find("class=listing-address")
-    print(result.prettify())
+    soup = BeautifulSoup(r.content, 'html.parser')
+#    result = soup.find(class="listing-address")
+    result = soup.find("div", class_ = "listing-address")
+    print(result)
