@@ -7,4 +7,3 @@ plotly_express==0.4.1
 bs4
 selenium
 webdriver-manager
-urllib
